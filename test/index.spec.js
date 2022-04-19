@@ -17,4 +17,16 @@ describe("Calculator Module", () => {
   it("Should provide correct sum when 2 Numbers are passed", () => {
     expect(add("4,7")).to.equal(11);
   });
+
+  it("Should handle negative Numbers when passed", () => {
+    expect(add("-4,7")).to.be.false;
+  });
+
+  it("Should calculate sum and handle custom delimiter", () => {
+    expect(add("//;\n1;2")).to.equal(3);
+  });
+
+  it("Should calculate sum and handle newline", () => {
+    expect(add("\n4,7")).to.equal(11);
+  });
 });
