@@ -58,13 +58,12 @@ const parseInput = (input) => {
     .filter((i) => {
       // handle negative numbers
       if (i < 0) negatives.push(i);
-
-      if (negatives.length > 0)
-        throw Error("negatives not allowed : " + negatives.toString());
-
       // filter non-zero numbers
       return i > 0;
     });
+
+  if (negatives.length > 0)
+    throw Error("negatives not allowed : " + JSON.stringify(negatives));
 
   return result;
 };
