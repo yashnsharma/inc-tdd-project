@@ -20,9 +20,10 @@ const add = (input) => {
     inputArray = parseInput(_input);
 
     // check for parameter length limits
-    if (inputArray.length > 2 || inputArray.length < 2) {
-      throw Error("Provided numbers exceed the required limits");
+    if (inputArray.length <= 1) {
+      throw Error("Please provide atleast 2 numbers for calculation");
     }
+
     // Calculate Sum of all numbers
     result = inputArray.reduce((a, b) => a + b, 0);
     return result;

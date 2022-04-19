@@ -29,4 +29,12 @@ describe("Calculator Module", () => {
   it("Should calculate sum and handle newline", () => {
     expect(add("\n4,7")).to.equal(11);
   });
+
+  it("Should calculate sum of more than 2 numbers and handle newline, custom delimiter", () => {
+    expect(add("//;\n1;2;3")).to.equal(6);
+  });
+
+  it("Should calculate sum of more than 10 numbers and handle newline, custom delimiter", () => {
+    expect(add("//;\n0;1;2;3;4;5;6;7;8;9;10;11;12;13;14")).to.equal(105);
+  });
 });
